@@ -51,9 +51,10 @@ Route::get('/meja/show', function () {
 })->middleware(['auth'])->name('meja.show');
 
 
-Route::get('menus','MenuController@index');
-Route::post('menu/create',[MenuController::class,'store'])->name('menu')
-;
+// Route::get('menus','MenuController@index');
+Route::get('menu',[MenuController::class,'index'])->name('menu.index');
+Route::post('menu/create',[MenuController::class,'store'])->name('menu');
+// Route::post('menu/edit',[MenuController::class,''])->
 require __DIR__.'/auth.php';
 
 Route::middleware('auth')->group(function () {
@@ -63,5 +64,5 @@ Route::middleware('auth')->group(function () {
 
     Route::get('profile', [ProfileController::class, 'show'])->name('profile.show');
     Route::put('profile', [ProfileController::class, 'update'])->name('profile.update');
-    //Route::get('menus',[MenuController::class,'index'])->name('menu.index');
+    //Route::get('menu',[MenuController::class,'index'])->name('menu.index');
 });

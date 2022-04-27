@@ -16,8 +16,11 @@ class MenuController extends Controller
      */
     public function index()
     {
-        $Menus = DB::table('Menu')->get();
-        return view('Menu.index',['Menu'=>$Menus]);
+         //$menus = DB::table('menu')->get();
+         //return view('menu.index',['menu'=>$Menus]);
+        $menus = menu::paginate(20);
+
+        return view('menu.index', compact('menus'));
     }
 
     /**
@@ -43,7 +46,7 @@ class MenuController extends Controller
         $Menu->price = $request->price;
         $Menu->image = $request->image;
         $Menu->save();
-        return redirect('/menu')->with('status', 'Data Has Been inserted');
+        return redirect('menu')->with('status', 'Data Has Been inserted');
     }
 
     /**

@@ -40,7 +40,7 @@
                 class="p-2 mx-4 mt-2 space-y-2 overflow-hidden text-sm font-medium text-white bg-gray-700 bg-opacity-50 rounded-md shadow-inner"
                 aria-label="submenu">
                 <li class="px-2 py-1 transition-colors duration-150">
-                    <a class="w-full" href="{{ route('menu/index') }}">{{ __('List Menu') }}</a>
+                    <a class="w-full" href="{{ route('menu.index') }}">{{ __('List Menu') }}</a>
                 </li>
                 <li class="px-2 py-1 transition-colors duration-150">
                     <a class="w-full" href="{{ route('menu') }}">{{ __('Tambah Menu') }}</a>
